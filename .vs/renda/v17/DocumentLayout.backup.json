@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Element\\programing\\CPP\\winapp\\renda\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A166F3A8-F311-4BC8-8F0A-F5513EC0C1BB}|renda\\renda.vcxproj|D:\\Element\\programing\\CPP\\winapp\\renda\\renda\\renda.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A166F3A8-F311-4BC8-8F0A-F5513EC0C1BB}|renda\\renda.vcxproj|solutionrelative:renda\\renda.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "renda.cpp",
+              "DocumentMoniker": "D:\\Element\\programing\\CPP\\winapp\\renda\\renda\\renda.cpp",
+              "RelativeDocumentMoniker": "renda\\renda.cpp",
+              "ToolTip": "D:\\Element\\programing\\CPP\\winapp\\renda\\renda\\renda.cpp",
+              "RelativeToolTip": "renda\\renda.cpp",
+              "ViewState": "AgIAAD0BAAAAAAAAAAAvwFoBAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-03T04:38:15.498Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
