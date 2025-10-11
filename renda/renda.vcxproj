@@ -123,7 +123,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GlobalVariants.cpp" />
     <ClCompile Include="renda.cpp" />
+    <ClCompile Include="WindowManager.cpp" />
+    <ClCompile Include="実装予定機能.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GlobalVariants.h" />
+    <ClInclude Include="WindowManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

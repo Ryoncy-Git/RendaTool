@@ -1,4 +1,5 @@
-﻿  renda.cpp
+﻿  GlobalVariants.cpp
+  renda.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\sal.h(241,9): warning C4005: '_At_': マクロが再定義されました。
   (ソース ファイル 'renda.cpp' をコンパイルしています)
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\no_sal2.h(28,9):
@@ -1084,5 +1085,7 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\driverspecs.h
       C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\shared\no_sal2.h(872,9):
       '_Kernel_float_used_' の以前の定義を確認してください
   
-D:\Element\programing\CPP\winapp\renda\renda\renda.cpp(157,25): warning C4244: '初期化中': 'LRESULT' から 'int' への変換です。データが失われる可能性があります。
+D:\Element\programing\CPP\winapp\renda\renda\renda.cpp(124,25): warning C4244: '初期化中': 'LRESULT' から 'int' への変換です。データが失われる可能性があります。
+  WindowManager.cpp
+  コードを生成中...
   renda.vcxproj -> D:\Element\programing\CPP\winapp\renda\x64\Debug\renda.exe

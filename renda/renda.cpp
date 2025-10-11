@@ -1,11 +1,4 @@
-﻿// 実装したい機能
-// キーボード含めて自動的に操作できるようにしたい
-// // キーコードを調べれば何とかなりそう
-// 特定のストリーム(一連の流れ)を作りたい
-// // 例えば、Aボタンを押して、Bボタンを押して、Cボタンを押す、みたいな
-// // 可変配列を使いたい
-
-#ifndef UNICODE
+﻿#ifndef UNICODE
 #define UNICODE
 #endif 
 
@@ -13,33 +6,11 @@
 #include <windows.h>
 #include <wchar.h>
 
-// グローバル変数
-#define ID_BTN_START 1001
-#define ID_BTN_STOP  1002
-#define ID_BTN_WIN1  1101
-#define ID_BTN_WIN2  1102
-#define CHAR_SIZE 32
+#include "GlobalVariants.h"
+#include "WindowManager.h"
 
 
-bool isRunning = false;
-wchar_t Input_Interval[CHAR_SIZE] = L"100"; // 連打間隔の初期値（ミリ秒）
-int Interval = 100;
-wchar_t Button_StartAndStop[CHAR_SIZE] = L"Button"; // ボタン名の初期値
-
-
-HWND hBtnStart = NULL;
-HWND hBtnStop = NULL;
-HWND hTextRunning = NULL;
-HWND hEditInput = NULL;
-HWND hComboBox = NULL;
-
-HINSTANCE g_hInstance = NULL;
-
-HANDLE hRendaThread = NULL;
-HHOOK g_hKeyHook = NULL;
-
-
-// 関数宣言
+// 関数宣言-------------------------
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 void SendRightClick();
 void StopRenda();
@@ -47,10 +18,6 @@ void StartRenda();
 DWORD WINAPI RendaThreadProc(LPVOID lpPram);
 void StartKeyHook();
 void StopKeyHook();
-void CreateMainWindow(HWND hwnd, _In_ HINSTANCE hInstance);
-void RefreshMainWindow();
-
-
 
 
 int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_ HINSTANCE hPrevInstance, _In_ PWSTR pCmdLine, _In_ int nCmdShow) // ウィンドウが立ち上がるときの処理
@@ -164,102 +131,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         return 0;
     }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
-}
-
-// 新しい法のウィンドウ案
-void CreateMainWindow(HWND hwnd, _In_ HINSTANCE hInstance)
-{
-    hBtnStart = CreateWindow(
-        L"BUTTON",
-        L"開始",
-        WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
-        50, 50, 120, 40,
-        hwnd,
-        (HMENU)ID_BTN_START,
-        hInstance,
-        NULL
-    );
-
-    hEditInput = CreateWindow(
-        L"EDIT",                // ← エディットコントロール
-        Input_Interval,         // 初期値（空文字列）
-        WS_CHILD | WS_VISIBLE | WS_BORDER | ES_LEFT,
-        50, 100, 120, 25,       // x, y, 幅, 高さ
-        hwnd,                   // 親ウィンドウ
-        NULL,                   // コントロールID（必要なら (HMENU)ID_EDIT_INPUT など）
-        hInstance,
-        NULL
-    );
-    GetWindowText(hEditInput, Input_Interval, 32); // 初期値をセット
-                    
-    hBtnStop = CreateWindow(
-        L"BUTTON",
-        L"停止",
-        WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
-        50, 50, 120, 40,
-        hwnd,
-        (HMENU)ID_BTN_STOP,
-        hInstance,
-        NULL
-    );
-
-    wchar_t text[32];
-    swprintf(text, CHAR_SIZE, L"連打間隔 %d", Interval);
-    hTextRunning = CreateWindow(
-        L"STATIC",
-        text,
-        WS_CHILD | WS_VISIBLE | SS_CENTER,
-        50, 100, 120, 25,
-        hwnd,
-        NULL,
-        hInstance,
-        NULL
-    );
-
-    hComboBox = CreateWindow(
-        L"COMBOBOX",            // ← コンボボックスコントロール
-        L"Insert",                   // 初期値（空文字列）
-        WS_CHILD | WS_VISIBLE | CBS_DROPDOWNLIST, // ドロップダウンリストスタイル
-        50, 150, 120, 200,      // x, y, 幅, 高さ
-        hwnd,                   // 親ウィンドウ
-        NULL,                   // コントロールID（必要なら (HMENU)ID_COMBOBOX など）
-        hInstance,
-        NULL
-	);
-    SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"Insert");
-	SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"Home");
-	SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"PageUp");
-	SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"Delete");
-	SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"End");
-	SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"PageDown");
-}
-
-void RefreshMainWindow()
-{
-    if (!(hBtnStart && hBtnStop && hTextRunning && hEditInput))
-    {
-        MessageBox(NULL, L"Windowの構成要素が不足の状態でリフレッシュしました", L"情報", MB_OK | MB_ICONINFORMATION); 
-        return;
-    }
-
-    if (isRunning)
-    {
-        ShowWindow(hBtnStart, SW_HIDE);
-        ShowWindow(hBtnStop, SW_SHOW);
-        ShowWindow(hEditInput, SW_HIDE);
-        ShowWindow(hTextRunning, SW_SHOW);
-
-        wchar_t text[CHAR_SIZE];
-        swprintf(text, CHAR_SIZE, L"連打間隔 %d", Interval);
-        SetWindowText(hTextRunning, text);
-    }
-    else
-    {
-        ShowWindow(hBtnStart, SW_SHOW);
-        ShowWindow(hBtnStop, SW_HIDE);
-        ShowWindow(hEditInput, SW_SHOW);
-        ShowWindow(hTextRunning, SW_HIDE);
-	}
 }
 
 // 動作面の実装-----------------------
