@@ -1,4 +1,5 @@
 #include "Execution.h"	
+#include "Output.h"
 
 void StartRenda()
 {
@@ -22,21 +23,6 @@ void StopRenda()
     }
     RefreshMainWindow();
     // StopKeyHook();
-}
-
-void SendRightClick()
-{
-    INPUT input[2] = {};
-
-    // 右ボタン押下
-    input[0].type = INPUT_MOUSE;
-    input[0].mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-
-    // 右ボタン離す
-    input[1].type = INPUT_MOUSE;
-    input[1].mi.dwFlags = MOUSEEVENTF_LEFTUP;
-
-    SendInput(2, input, sizeof(INPUT));
 }
 
 DWORD WINAPI RendaThreadProc(LPVOID lpPram)

@@ -65,6 +65,57 @@ void CreateMainWindow(HWND hwnd, _In_ HINSTANCE hInstance)
     SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"Delete");
     SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"End");
     SendMessage(hComboBox, CB_ADDSTRING, 0, (LPARAM)L"PageDown");
+
+    hComboInputType = CreateWindow(
+        L"COMBOBOX",            // ← コンボボックスコントロール
+        L"Insert",                   // 初期値（空文字列）
+        WS_CHILD | WS_VISIBLE | CBS_DROPDOWNLIST, // ドロップダウンリストスタイル
+        50, 300, 200, 300,      // x, y, 幅, 高さ
+        hwnd,                   // 親ウィンドウ
+        NULL,                   // コントロールID（必要なら (HMENU)ID_COMBOBOX など）
+        hInstance,
+        NULL
+    );
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Right Click");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Left Click");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Middle Click");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key A");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key B");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key C");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key D");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key E");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key F");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key G");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key H");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key I");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key J");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key K");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key L");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key M");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key N");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key O");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key P");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Q");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key R");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key S");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key T");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key U");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key V");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key W");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key X");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Y");
+	SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Z");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Esc");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Tab");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key CapsLock");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Left Shift");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Left Ctrl");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Left Alt");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Right Alt");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Right Shift");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Right Ctrl");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Enter");
+    SendMessage(hComboInputType, CB_ADDSTRING, 0, (LPARAM)L"Key Space");
 }
 
 void RefreshMainWindow()

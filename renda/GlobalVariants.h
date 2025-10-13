@@ -19,6 +19,7 @@ extern HWND hBtnStop;
 extern HWND hTextRunning;
 extern HWND hEditInput;
 extern HWND hComboBox;
+extern HWND hComboInputType;
 
 extern HINSTANCE g_hInstance;
 extern HANDLE hRendaThread;

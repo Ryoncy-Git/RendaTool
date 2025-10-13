@@ -5,8 +5,8 @@
 
 #include "GlobalVariants.h"
 #include "WindowManager.h"
+#include "Output.h"
 
 void StartRenda();
 void StopRenda();
-void SendRightClick();
 DWORD WINAPI RendaThreadProc(LPVOID lpPram);

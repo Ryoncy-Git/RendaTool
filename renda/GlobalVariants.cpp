@@ -12,6 +12,7 @@ HWND hBtnStop = NULL;
 HWND hTextRunning = NULL;
 HWND hEditInput = NULL;
 HWND hComboBox = NULL;
+HWND hComboInputType = NULL;
 
 HINSTANCE g_hInstance = NULL;
 
