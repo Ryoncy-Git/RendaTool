@@ -1,6 +1,6 @@
 #include "Output.h"
 
-void SendRightClick()
+void SendLeftClick()
 {
     INPUT input[2] = {};
 
@@ -15,7 +15,7 @@ void SendRightClick()
     SendInput(2, input, sizeof(INPUT));
 }
 
-void SendLeftClick()
+void SendRightClick()
 {
     INPUT input[2] = {};
 
@@ -45,7 +45,7 @@ void SendMiddleClick()
 	SendInput(2, input, sizeof(INPUT));
 }
 
-void SendKey(WORD vkCode)
+void SendKeyPress(WORD vkCode)
 {
     INPUT input[2] = {};
 

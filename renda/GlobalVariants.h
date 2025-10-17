@@ -10,16 +10,22 @@
 #define CHAR_SIZE 32
 
 extern bool isRunning;
-extern wchar_t Input_Interval[32];
+extern wchar_t InputInterval[32];
 extern int Interval;
-extern wchar_t Button_StartAndStop[32];
+extern wchar_t ButtonStartAndStop[32];
+extern wchar_t rendaKey[32];
 
 extern HWND hBtnStart;
 extern HWND hBtnStop;
-extern HWND hTextRunning;
-extern HWND hEditInput;
-extern HWND hComboBox;
+extern HWND hTextIntervalLabel;
+extern HWND hTextInterval;
+extern HWND hTextSSLabel;
+extern HWND hTextSS; // Start and Stop
+extern HWND hTextrendaKeyLabel;
+extern HWND hTextrendaKey;
 extern HWND hComboInputType;
+extern HWND hComboSSButtonType;
+extern HWND hInputInterval;
 
 extern HINSTANCE g_hInstance;
 extern HANDLE hRendaThread;

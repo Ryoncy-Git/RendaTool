@@ -9,3 +9,8 @@ void CreateMainWindow(HWND hwnd, _In_ HINSTANCE hInstance);
 
 void RefreshMainWindow();
 // Update the window title based on the current file name and unsaved changes
+
+void CreateUIInRunning(HWND hwnd, _In_ HINSTANCE hInstance);
+void CreateUIInWaiting(HWND hwnd, _In_ HINSTANCE hInstance);
+void ShowUIInRunning();
+void ShowUIInWaiting();

@@ -10,3 +10,4 @@
 void StartRenda();
 void StopRenda();
 DWORD WINAPI RendaThreadProc(LPVOID lpPram);
+WORD GetVkCodeFromLabel(const wchar_t* label);			
