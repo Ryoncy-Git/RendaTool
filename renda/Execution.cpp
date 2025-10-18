@@ -5,9 +5,15 @@ HANDLE hStopEvent;
 
 void StartRenda()
 {
+    GetWindowText(hInputInterval, InputInterval, 32);
+	Interval = _wtoi(InputInterval); // 入力値を数値に変換してセット
+    if (InputInterval[0] == L'\0' || rendaKey[0] == L'\0' || Interval <= 0)
+        return;
+
     isRunning = true;
     GetWindowText(hInputInterval, InputInterval, 32);
     Interval = _wtoi(InputInterval); // 入力値を数値に変換してセット
+
     RefreshMainWindow();
 
     hRendaThread = CreateThread(NULL, 0, RendaThreadProc, NULL, 0, NULL);

@@ -4,7 +4,7 @@
 bool isRunning = false;
 wchar_t InputInterval[CHAR_SIZE] = L"100"; // 連打間隔の初期値（ミリ秒）
 int Interval = 100;
-wchar_t ButtonStartAndStop[CHAR_SIZE] = L"Button"; // ボタン名の初期値
+wchar_t ButtonStartAndStop[CHAR_SIZE] = L"Insert"; // ボタン名の初期値
 wchar_t rendaKey[CHAR_SIZE] = L"Left Click";
 
 

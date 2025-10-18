@@ -34,7 +34,7 @@ void CreateUIInRunning(HWND hwnd, _In_ HINSTANCE hInstance)
         L"BUTTON",
         L"停止",
         WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON,
-        50, 50, 120, 40,
+        50, 350, 120, 40,
         hwnd,
         (HMENU)ID_BTN_STOP,
         hInstance,
@@ -161,7 +161,7 @@ void CreateUIInWaiting(HWND hwnd, _In_ HINSTANCE hInstance)
 
     hComboInputType = CreateWindow(
         L"COMBOBOX",            // ← コンボボックスコントロール
-        L"Insert",                   // 初期値（空文字列）
+        L"Left Click",                   // 初期値（空文字列）
         WS_CHILD | WS_VISIBLE | CBS_DROPDOWN, // ドロップダウンリストスタイル
         50, 250, 120, 200,      // x, y, 幅, 高さ
         hwnd,                   // 親ウィンドウ
