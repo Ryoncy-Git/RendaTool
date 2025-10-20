@@ -22,4 +22,4 @@ Windowsでの動作を想定しています
 
 ## 実際の実行画像
 ![実行中の画面](forReadMe/picture_running.png)
-![待機中の画面](forReadMe/picture_wating.png)
+![待機中の画面](forReadMe/picture_waiting.png)
