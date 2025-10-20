@@ -15,8 +15,6 @@
 // 関数宣言-------------------------
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 void SendRightClick();
-void StopRenda();
-void StartRenda();
 void StartKeyHook();
 void StopKeyHook();
 

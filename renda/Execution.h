@@ -2,10 +2,12 @@
 
 #include <wchar.h>
 #include <windows.h>
+#include <stdlib.h>
 
 #include "GlobalVariants.h"
 #include "WindowManager.h"
 #include "Output.h"
+
 
 void StartRenda();
 void StopRenda();

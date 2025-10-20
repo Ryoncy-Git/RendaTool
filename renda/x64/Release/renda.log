@@ -1,0 +1,4 @@
+﻿Execution.obj : error LNK2001: 外部シンボル wcsstr は未解決です
+    定義済みの一致する可能性があるシンボルに関するヒント:
+      "wchar_t * __cdecl wcsstr(wchar_t *,wchar_t const *)" (?wcsstr@@YAPEA_WPEA_WPEB_W@Z)
+D:\Element\programing\CPP\winapp\renda\x64\Release\renda.exe : fatal error LNK1120: 1 件の未解決の外部参照

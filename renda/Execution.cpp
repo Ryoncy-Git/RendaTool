@@ -1,23 +1,22 @@
 ﻿#include "Execution.h"	
-#include "Output.h"
+#include <stdlib.h>
+
 
 HANDLE hStopEvent;
 
 void StartRenda()
 {
     GetWindowText(hInputInterval, InputInterval, 32);
-	Interval = _wtoi(InputInterval); // 入力値を数値に変換してセット
+	Interval = static_cast<int>(wcstol(InputInterval, nullptr, 10)); // 入力値を数値に変換してセット
     if (InputInterval[0] == L'\0' || rendaKey[0] == L'\0' || Interval <= 0)
         return;
 
     isRunning = true;
-    GetWindowText(hInputInterval, InputInterval, 32);
-    Interval = _wtoi(InputInterval); // 入力値を数値に変換してセット
 
     RefreshMainWindow();
 
-    hRendaThread = CreateThread(NULL, 0, RendaThreadProc, NULL, 0, NULL);
     hStopEvent = CreateEvent(NULL, TRUE, FALSE, NULL); // 手動リセット、非シグナル状態
+    hRendaThread = CreateThread(NULL, 0, RendaThreadProc, NULL, 0, NULL);
     // StartKeyHook();
 }
 
